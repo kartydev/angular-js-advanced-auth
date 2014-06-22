@@ -13,18 +13,15 @@ var protractor  = require("gulp-protractor").protractor;
 var webdriver   = require("gulp-protractor").webdriver_standalone;
 
 gulp.task('build:copy', function() {
-  gulp.src([
-      './**/*.html',
-      '!./index.html'
-    ], {base: './frontend'}
-  ).pipe(gulp.dest('build/'));
+  gulp.src(['./frontend/**/*.html', '!./frontend/index.html'], {base: './frontend'})
+  .pipe(gulp.dest('build/'));
 });
 
 gulp.task('build:usemin', function() {
   gulp.src('./frontend/index.html')
     .pipe(usemin({
       css: [minifyCss(), 'concat', rev()],
-      js: [uglify(), rev()]
+      js: [rev()]
     }))
     .pipe(gulp.dest('build/'));
 });
