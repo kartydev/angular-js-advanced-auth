@@ -1,4 +1,4 @@
-# Thinkful Github OAuth Repo
+# Thinkful Github - Advanced Authentication & Authorization
 
 ## Installation
 
